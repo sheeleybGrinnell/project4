@@ -3,9 +3,9 @@
  * kruskal.cpp
  * Spring 2025
  *
- * Partner 1:
- * Partner 2:
- * Date:
+ * Partner 1: Benjamin Sheeley
+ * Partner 2: Raj Jhanwar
+ * Date: 04/14/2025
  */
 
 #include "kruskal.hpp"
@@ -40,6 +40,13 @@ vector<Edge> kruskal(vector<Vertex> &adjList, vector<Edge> &edgeList) {
     vector<int> pi(n);
     for (int i=0; i<pi.size(); i++) {
         pi[i] = i;
+    }
+    // loop through each edge in our sorted edgelist
+    for (Edge edge : edgeList) {
+        // if the rank of one of our vertices is 0, we know it does not have any parents
+        if (rank[edge.first.label] == 0) {
+
+        }
     }
 
     return mst;
