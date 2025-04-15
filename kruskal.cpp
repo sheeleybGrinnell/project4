@@ -62,7 +62,14 @@ vector<Edge> kruskal(vector<Vertex> &adjList, vector<Edge> &edgeList) {
             union_by_rank(u.label, v.label, rank, pi);
             mst.push_back(edge);
             u.mstNeighbors.push_back(v.label);
+            for(int neighbor : u.mstNeighbors) {
+                cout << neighbor << '\n';
+            }
             v.mstNeighbors.push_back(u.label);
+            for (int neighbor : v.mstNeighbors) {
+                cout << neighbor << '\n';
+            }
+
         }
     } //for
 
