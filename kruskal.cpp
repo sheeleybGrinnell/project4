@@ -19,7 +19,7 @@ int find(int v, vector<int> &pi) {
     if (v == pi[v]) {
         return v;
     }
-    pi[v] == find(pi[v]);
+    pi[v] = find(pi.at(v), pi);
     return pi[v];
 }
 
@@ -27,12 +27,14 @@ int find(int v, vector<int> &pi) {
  * union_by_rank
  */
 void union_by_rank(int u, int v, vector<int> &rank, vector<int> &pi) {
-    int vParent = find(v);
-    int uParent = find(u);
+    int vParent = find(pi[v], pi);
+    int uParent = find(pi[u], pi);
     if (rank[vParent] <= rank[uParent]) {
         pi[vParent] = uParent;
+        vParent++;
     } else {
         pi[uParent] = vParent;
+        uParent++;
     }
     return;
 }
@@ -54,11 +56,13 @@ vector<Edge> kruskal(vector<Vertex> &adjList, vector<Edge> &edgeList) {
     }
     // loop through each edge in our sorted edgelist
     for (Edge edge : edgeList) {
-        // if the rank of one of our vertices is 0, we know it is a singleton
-        if () {
-
-        } else {
-
+        Vertex u = edge.first;
+        Vertex v = edge.second;
+        if (find(u.label, pi) != find(v.label, pi)) {
+            union_by_rank(u.label, v.label, rank, pi);
+            mst.push_back(edge);
+            u.mstNeighbors.push_back(v.label);
+            v.mstNeighbors.push_back(u.label);
         }
     } //for
 
