@@ -90,15 +90,13 @@ vector<Edge> kruskal(vector<Vertex> &adjList, vector<Edge> &edgeList) {
             union_by_rank(u.label, v.label, rank, pi);
             mst.push_back(edge);
             // add both vertices to each others' neighbors list for the MST
-            u.mstNeighbors.push_back(v.label);
-            v.mstNeighbors.push_back(u.label);
-            // debug to find missing MST neighbors
-            cout << "u info\n";
-            u.printVertex();
-            cout << "v info\n";
-            v.printVertex();
-
-
+            adjList[u.label].mstNeighbors.push_back(v.label);
+            adjList[v.label].mstNeighbors.push_back(u.label);
+            // debug to find missing MST neighbors(?)
+            // cout << "u info\n";
+            // cout << u.printVertex() << "\n";
+            // cout << "v info\n";
+            // cout << v.printVertex() << "\n";
         } //if
     } //for
 
