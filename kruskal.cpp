@@ -16,13 +16,24 @@ using namespace std;
  * find
  */
 int find(int v, vector<int> &pi) {
-    return -1;
+    if (v == pi[v]) {
+        return v;
+    }
+    pi[v] == find(pi[v]);
+    return pi[v];
 }
 
 /*
  * union_by_rank
  */
 void union_by_rank(int u, int v, vector<int> &rank, vector<int> &pi) {
+    int vParent = find(v);
+    int uParent = find(u);
+    if (rank[vParent] <= rank[uParent]) {
+        pi[vParent] = uParent;
+    } else {
+        pi[uParent] = vParent;
+    }
     return;
 }
 
@@ -43,11 +54,13 @@ vector<Edge> kruskal(vector<Vertex> &adjList, vector<Edge> &edgeList) {
     }
     // loop through each edge in our sorted edgelist
     for (Edge edge : edgeList) {
-        // if the rank of one of our vertices is 0, we know it does not have any parents
-        if (rank[edge.first.label] == 0) {
+        // if the rank of one of our vertices is 0, we know it is a singleton
+        if () {
+
+        } else {
 
         }
-    }
+    } //for
 
     return mst;
 }
