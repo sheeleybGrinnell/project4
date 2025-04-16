@@ -92,11 +92,6 @@ vector<Edge> kruskal(vector<Vertex> &adjList, vector<Edge> &edgeList) {
             // add both vertices to each others' neighbors list for the MST
             adjList[u.label].mstNeighbors.push_back(v.label);
             adjList[v.label].mstNeighbors.push_back(u.label);
-            // debug to find missing MST neighbors(?)
-            // cout << "u info\n";
-            // cout << u.printVertex() << "\n";
-            // cout << "v info\n";
-            // cout << v.printVertex() << "\n";
         } //if
     } //for
 
