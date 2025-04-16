@@ -50,9 +50,5 @@ vector<int> tsp(vector<Vertex> &adjList, Vertex &start) {
         }
     }
     tour.push_back(start.label);
-    cout << tour.size() << '\n';
-    for (int city: tour) {
-        cout << city << " is a city we visit\n";
-    }
     return tour;
 }
