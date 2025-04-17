@@ -3,8 +3,8 @@
  * tsp.hpp
  * Spring 2025
  *
- * Partner 1:
- * Partner 2:
+ * Partner 1: Benjamin Sheeley
+ * Partner 2: Raj Jhanwar
  * Date:
  */
 

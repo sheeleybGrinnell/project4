@@ -4,7 +4,7 @@
  * Fall 2022
  *
  * Partner 1: Raj Jhanwar
- * Partner 2: Ben Sheeley
+ * Partner 2: Benjamin Sheeley
  * Date: 04/15/2025
  */
 
