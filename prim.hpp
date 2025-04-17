@@ -3,8 +3,8 @@
  * prim.hpp
  * Spring 2025
  *
- * Partner 1:
- * Partner 2:
+ * Partner 1: Raj Jhanwar
+ * Partner 2: Ben Sheeley
  * Date:
  */
 
